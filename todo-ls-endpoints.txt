@@ -1,0 +1,47 @@
+GET /users
+POST /users
+GET /users/{userId}
+PUT /users/{userId}
+DELETE /users/{userId}
+
+GET /workspaces (filter by user with query parameter, e.g., ?userId=123)
+POST /workspaces (include userId in the request body)
+GET /workspaces/{workspaceId}
+PUT /workspaces/{workspaceId}
+DELETE /workspaces/{workspaceId}
+
+GET /posts (filter by workspace with query parameter, e.g., ?workspaceId=456)
+POST /posts (include workspaceId in the request body)
+GET /posts/{postId}
+PATCH /posts/{postId}
+DELETE /posts/{postId}
+
+GET /tags (filter by post with query parameter, e.g., ?postId=789)
+POST /tags (include postId in the request body)
+GET /tags/{tagId}
+PATCH /tags/{tagId}
+DELETE /tags/{tagId}
+#####################################################################################################3
+GET /users: List all users.
+POST /users: Create a new user.
+GET /users/{userId}: Retrieve a specific user's details.
+PUT /users/{userId}: Update a specific user's details.
+DELETE /users/{userId}: Delete a specific user.
+
+GET /users/{userId}/workspaces: List all workspaces of a specific user.
+POST /users/{userId}/workspaces: Create a new workspace for a specific user.
+GET /users/{userId}/workspaces/{workspaceId}: Retrieve details of a specific workspace.
+PUT /users/{userId}/workspaces/{workspaceId}: Update a specific workspace's details.
+DELETE /users/{userId}/workspaces/{workspaceId}: Delete a specific workspace.
+
+GET /users/{userId}/workspaces/{workspaceId}/posts: List all posts in a specific workspace.
+POST /users/{userId}/workspaces/{workspaceId}/posts: Create a new post in a specific workspace.
+GET /users/{userId}/workspaces/{workspaceId}/posts/{postId}: Retrieve details of a specific post.
+PUT /users/{userId}/workspaces/{workspaceId}/posts/{postId}: Update a specific post's details.
+DELETE /users/{userId}/workspaces/{workspaceId}/posts/{postId}: Delete a specific post.
+
+GET /users/{userId}/workspaces/{workspaceId}/posts/{postId}/tags: List all tags associated with a specific post.
+POST /users/{userId}/workspaces/{workspaceId}/posts/{postId}/tags: Add new tags to a specific post.
+GET /users/{userId}/workspaces/{workspaceId}/posts/{postId}/tags/{tagId}: Retrieve details of a specific tag.
+PUT /users/{userId}/workspaces/{workspaceId}/posts/{postId}/tags/{tagId}: Update a specific tag's details.
+DELETE /users/{userId}/workspaces/{workspaceId}/posts/{postId}/tags/{tagId}: Remove a tag from a specific post.
